@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "bestOf2025",
-    "slug": "bestOf2025",
+    "slug": "bestof2025",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,10 +19,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dhamzeh.bestOf2025"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "16848e77-d5fa-48da-b10d-deec80cc388b"
+      }
+    },
+    "owner": "dhamzeh"
   }
 }
