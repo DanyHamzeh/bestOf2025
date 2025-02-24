@@ -132,7 +132,7 @@ const ArabicScreen = ({ navigation }) => {
     // Handle the voting API
     const voteApiHandler = () => {
         setLoading(true);
-        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=${ArabicApi}&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId
+        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=AR&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId
             }&dateInstalled=${installedTime}`;
         
         fetch(apiUrl, {

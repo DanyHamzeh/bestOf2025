@@ -101,7 +101,7 @@ function EnglishScreen({ navigation }) {
     const voteApiHandler = () => {
         setLoading(true);
 
-        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=${EnglishApi}&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId}&dateInstalled=${installedTime}`;
+        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=EN&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId}&dateInstalled=${installedTime}`;
 
         fetch(apiUrl, {
             method: "POST",
