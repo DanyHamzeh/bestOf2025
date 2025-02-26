@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
+    color: '#F6B164',
+    textTransform:"capitalize"
   },
 });
 

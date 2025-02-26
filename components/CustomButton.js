@@ -2,7 +2,7 @@ import { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { scaleHeight, scaleWidth } from "../utils/sizeUtils";
 
-export default function CustomButton({ children, onPress, disabled ,width }) {
+export default function CustomButton({ children, onPress, disabled, width }) {
 
     const [btnPressed, setBtnPressed] = useState(false);
 
@@ -12,11 +12,11 @@ export default function CustomButton({ children, onPress, disabled ,width }) {
             {
                 width: width,
                 height: scaleHeight(130),
-                borderWidth:2,
-                borderColor:"#C2E0D4",
-                borderRadius:30,
+                borderWidth: 2,
+                borderColor: "#F6B164",
+                borderRadius: 30,
 
-                
+
 
             },
             btnPressed ?
@@ -35,8 +35,8 @@ export default function CustomButton({ children, onPress, disabled ,width }) {
             <Pressable disabled={disabled}>
                 <Text style={[styles.buttonText,
                 {
-                    fontSize: scaleWidth(40),
-                    color: "white",
+                    fontSize: scaleWidth(50),
+                    color: "#F6B164",
                     fontFamily: "Tajawal",
 
                 },

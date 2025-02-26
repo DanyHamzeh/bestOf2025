@@ -11,6 +11,7 @@ import Animated, {
 } from "react-native-reanimated";
 import AnimatedText from "./AnimatedText";
 import { scaleHeight, scaleWidth } from "../utils/sizeUtils";
+import { LinearGradient } from "expo-linear-gradient";
 
 
 const Splashscreen = ({ onAnimationEnd }) => {
@@ -49,9 +50,11 @@ const Splashscreen = ({ onAnimationEnd }) => {
     }, []);
 
     return (
-        <ImageBackground
-            source={require("../assets/GlobeImageBackground.jpg")}
+        <LinearGradient
+            colors={["#021F59", "#16CAF2"]}
             style={styles.container}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
         >
             <Animated.Image
                 source={require("../assets/backtest.png")}
@@ -59,7 +62,7 @@ const Splashscreen = ({ onAnimationEnd }) => {
             />
             <AnimatedText text="BEST OF 2025" />
 
-        </ImageBackground>
+        </LinearGradient>
     );
 };
 
