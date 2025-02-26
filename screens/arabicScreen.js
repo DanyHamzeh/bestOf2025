@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ImageBackground, Text, Alert, KeyboardAvoidingView, RefreshControl, ScrollView,Platform } from 'react-native';
+import { View, StyleSheet, ImageBackground, Text, Alert, KeyboardAvoidingView, RefreshControl, ScrollView, Platform } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import { CountryPicker } from "react-native-country-codes-picker";
 import { LinearGradient } from 'expo-linear-gradient';
@@ -33,7 +33,7 @@ const ArabicScreen = ({ navigation }) => {
     const widthBar = scaleWidth(1000);
     const heightBar = scaleHeight(800);
     const EnglishApiTopThree = "EN";
-    const ArabicApi= "EN";
+    const ArabicApi = "AR";
 
     // Navigate to the result screen
     function navigateResult() {
@@ -87,7 +87,7 @@ const ArabicScreen = ({ navigation }) => {
             Alert.alert("تنبيه", "يرجى اختيار دولة.", [
                 { text: "حسنًا", style: "cancel" }
             ]);
-                    } else {
+        } else {
             Alert.alert("", "هل أنت متأكد أنك تريد التصويت لـ " + selectedCountry.name.ar, [
                 {
                     text: "نعم",
@@ -98,7 +98,7 @@ const ArabicScreen = ({ navigation }) => {
             ]);
         }
     }
-    
+
     const votesNewInfo = () => {
         setLoading(true);
         const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/getVotes.php?language=${EnglishApiTopThree}&isTopThree=Y`;
@@ -132,9 +132,9 @@ const ArabicScreen = ({ navigation }) => {
     // Handle the voting API
     const voteApiHandler = () => {
         setLoading(true);
-        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=AR&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId
+        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/vote.php?language=${ArabicApi}&countryCode=${selectedCountry.code}&key=${installedTime + Device.osBuildId
             }&dateInstalled=${installedTime}`;
-        
+
         fetch(apiUrl, {
             method: "POST",
             headers: {
@@ -190,7 +190,7 @@ const ArabicScreen = ({ navigation }) => {
                 alert("خطأ في الاتصال. يرجى المحاولة مرة أخرى لاحقًا.");
             });
     };
-    
+
 
     // Fetch voting data and format it
     useEffect(() => {
@@ -235,9 +235,11 @@ const ArabicScreen = ({ navigation }) => {
 
 
     return (
-        <ImageBackground
-            source={require("../assets/testtt.jpg")}
+        <LinearGradient
+            colors={["#021F59", "#16CAF2"]}
             style={styles.container}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
         >
             {loading ? (
                 <View style={styles.loader}>
@@ -269,17 +271,17 @@ const ArabicScreen = ({ navigation }) => {
                         showBarTops={true}
                         chartConfig={{
                             backgroundColor: "transparent",
-                            backgroundGradientFrom: "#80B3B7",
-                            backgroundGradientTo: "#316362",
+                            backgroundGradientFrom: "#021F59",
+                            backgroundGradientTo: "#16CAF2",
                             decimalPlaces: 0,
                             color: (opacity = 4) => `rgba(255, 255, 255, ${opacity})`,
-                            labelColor: () => `white`,
+                            labelColor: () => `#F6B164`,
                             propsForLabels: {
-                                fontFamily: 'Tajawal', // Check that this font supports Arabic
+                                fontFamily: 'Tajawal', 
                                 fontSize: scaleWidth(30),
                                 fontWeight: 'normal',
-                                textAlign: 'right',  // Align text to the right for RTL
-                                writingDirection: 'rtl', // Explicitly set writing direction to RTL
+                                textAlign: 'right', 
+                                writingDirection: 'rtl', 
                             },
                         }}
                         style={{
@@ -319,7 +321,7 @@ const ArabicScreen = ({ navigation }) => {
                                 <CustomButton onPress={() => setShow(true)} width={scaleWidth(500)}>
                                     {selectedCountry ? (
                                         <>
-                                            {selectedCountry.flag} {selectedCountry.name.ar} 
+                                            {selectedCountry.flag} {selectedCountry.name.ar}
                                         </>
                                     ) : (
                                         'اختر الدولة'
@@ -337,13 +339,13 @@ const ArabicScreen = ({ navigation }) => {
                                         <CountryPicker
                                             show={show}
                                             pickerButtonOnPress={(item) => {
-                                                setSelectedCountry(item);  
+                                                setSelectedCountry(item);
                                                 setCountryCode(item.dial_code);
-                                                setShow(false); 
+                                                setShow(false);
                                             }}
                                             style={{
                                                 modal: {
-                                                    height: scaleHeight(1400), 
+                                                    height: scaleHeight(1400),
                                                 },
                                                 line: {
                                                     backgroundColor: "black",
@@ -352,7 +354,7 @@ const ArabicScreen = ({ navigation }) => {
                                                     display: "none",
                                                 },
                                                 searchBar: {
-                                                    marginBottom: 10, 
+                                                    marginBottom: 10,
                                                 }
                                             }}
                                             lang="ar" // Set language to Arabic
@@ -374,7 +376,7 @@ const ArabicScreen = ({ navigation }) => {
                         </View> : <></>}
                 </ScrollView>
             )}
-        </ImageBackground>
+        </LinearGradient>
     );
 };
 
@@ -385,16 +387,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     titleStyle: {
-        color: "white",
+        color: "#F6B164",
         textAlign: "center",
         fontSize: scaleWidth(50),
         marginTop: scaleHeight(200),
-        fontFamily:"Tajawal"
+        fontFamily: "Tajawal"
     },
     underLineStyle: {
         width: scaleWidth(500),
         borderWidth: 1,
-        borderColor: "white",
+        borderColor: "#F6B164",
         margin: "auto"
     },
     allBtns: {
@@ -416,7 +418,7 @@ const styles = StyleSheet.create({
         fontSize: scaleWidth(24),
         textAlign: 'center',
         fontFamily: 'Tajawal',
-        color: 'white'
+        color: '#F6B164'
     },
     loader: {
         flex: 1,

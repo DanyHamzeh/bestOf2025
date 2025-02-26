@@ -112,7 +112,6 @@ function EnglishScreen({ navigation }) {
         })
             .then((response) => response.json())
             .then(async (data) => {
-                console.log("API Response Data:", data);
 
                 if (data.statusCode == "0") {
                     await AsyncStorage.setItem('hasVoted', 'true');
@@ -123,17 +122,19 @@ function EnglishScreen({ navigation }) {
                             onPress: votesNewInfo,
                         },
                     ]);
-                    setShowCont(false); 
+                    setShowCont(false);
                 } else {
                     setLoading(false);
                     if (data.statusCode == "-4") {
                         Alert.alert("Unable To Vote!!", "Estimated remaining time to vote: " + data.remainingTime, [
                             { text: "Ok", style: "cancel" },
                         ]);
+
                     } else if (data.statusCode == "-5") {
                         Alert.alert("Unable To Vote!!", "You already voted", [
                             { text: "Ok", style: "cancel" },
                         ]);
+
                     } else {
                         Alert.alert("", "Something went wrong. Please try again later.", [
                             { text: "Try Again", style: "cancel" },
@@ -145,6 +146,8 @@ function EnglishScreen({ navigation }) {
                 setLoading(false);
                 console.error("Fetch Error:", error);
                 alert("Connection error. Please try again later.");
+                console.log(apiUrl);
+
             });
     };
 
@@ -187,9 +190,11 @@ function EnglishScreen({ navigation }) {
     };
 
     return (
-        <ImageBackground
-            source={require("../assets/testtt.jpg")}
+        <LinearGradient
+            colors={["#021F59", "#16CAF2"]}
             style={styles.container}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
         >
             {loading ? (
                 <View style={styles.loader}>
@@ -221,15 +226,15 @@ function EnglishScreen({ navigation }) {
                         showBarTops={true}
                         chartConfig={{
                             backgroundColor: "transparent",
-                            backgroundGradientFrom: "#80B3B7",
-                            backgroundGradientTo: "#316362",
+                            backgroundGradientFrom: "#16CAF2",
+                            backgroundGradientTo: "#021F59",
                             decimalPlaces: "",
                             color: (opacity = 4) => `rgba(255, 255, 255, ${opacity})`,
-                            labelColor: () => `white`,
+                            labelColor: () => `#F6B164`,
                             propsForLabels: {
-                                fontFamily: 'Tajawal', 
+                                fontFamily: 'Tajawal',
                                 fontSize: scaleWidth(30),
-                                fontWeight: 'normal',                            
+                                fontWeight: 'normal',
                             },
                         }}
                         style={{
@@ -241,7 +246,7 @@ function EnglishScreen({ navigation }) {
                     />
                     <View style={styles.firstBtn}>
                         <LinearGradient
-                            colors={['#80B3B7', '#316362']}
+                            colors={["#16CAF2", "#021F59"]}
                             style={[styles.innerCircle, styles.gradientButton]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
@@ -264,7 +269,7 @@ function EnglishScreen({ navigation }) {
                     {showCont && (
                         <View style={styles.allBtns}>
                             <LinearGradient
-                                colors={['#80B3B7', '#316362']}
+                                colors={["#16CAF2", "#021F59"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -297,7 +302,7 @@ function EnglishScreen({ navigation }) {
                                             }}
                                             style={{
                                                 modal: {
-                                                    height: scaleHeight(1400), 
+                                                    height: scaleHeight(1400),
                                                 },
                                                 line: {
                                                     backgroundColor: "black",
@@ -306,7 +311,7 @@ function EnglishScreen({ navigation }) {
                                                     display: "none",
                                                 },
                                                 searchBar: {
-                                                    marginBottom: 10, 
+                                                    marginBottom: 10,
                                                 }
                                             }}
                                         />
@@ -315,7 +320,7 @@ function EnglishScreen({ navigation }) {
                             )}
 
                             <LinearGradient
-                                colors={['#80B3B7', '#316362']}
+                                colors={["#16CAF2", "#021F59"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -328,7 +333,7 @@ function EnglishScreen({ navigation }) {
                     )}
                 </ScrollView>
             )}
-        </ImageBackground>
+        </LinearGradient>
     );
 };
 
@@ -339,7 +344,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     titleStyle: {
-        color: "white",
+        color: "#F6B164",
         textAlign: "center",
         fontSize: scaleWidth(50),
         marginTop: scaleHeight(200),
@@ -349,7 +354,7 @@ const styles = StyleSheet.create({
     underLineStyle: {
         width: scaleWidth(500),
         borderWidth: 1,
-        borderColor: "white",
+        borderColor: "#F6B164",
         margin: "auto"
     },
     allBtns: {
@@ -371,7 +376,7 @@ const styles = StyleSheet.create({
         fontSize: scaleWidth(24),
         textAlign: 'center',
         fontFamily: 'Tajawal',
-        color: 'white'
+        color: '#F6B164'
     },
     loader: {
         flex: 1,
