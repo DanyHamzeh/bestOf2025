@@ -57,9 +57,11 @@ function ResultsScreen({ route }) {
   };
 
   return (
-    <ImageBackground
-      source={require("../assets/testtt.jpg")}
+    <LinearGradient
+      colors={["#021F59", "#16CAF2"]}
       style={styles.container}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
     >
       {loading ? (
         <Loader />
@@ -80,7 +82,7 @@ function ResultsScreen({ route }) {
               {data.map((item, index) => (
                 <LinearGradient
                   key={index}
-                  colors={['#80B3B7', '#316362']}
+                  colors={["#16CAF2", "#021F59"]}
                   style={[styles.innerCircle, styles.gradientButton]}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}
@@ -100,7 +102,7 @@ function ResultsScreen({ route }) {
           </ScrollView>
         </>
       )}
-    </ImageBackground>
+    </LinearGradient>
   );
 }
 
@@ -131,7 +133,7 @@ const styles = StyleSheet.create({
     height: scaleHeight(150),
     borderRadius: 15,
     borderWidth: 0,
-    borderColor: "white",
+    borderColor: "#F6B164",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
@@ -152,21 +154,21 @@ const styles = StyleSheet.create({
   },
   countryText: {
     fontSize: scaleWidth(50),
-    color: "white",
+    color: "#F6B164",
     fontWeight: "bold",
     fontFamily: 'Tajawal',
 
   },
   textInside: {
     fontSize: scaleWidth(40),
-    color: "white",
+    color: "#F6B164",
     textAlign: "center",
     fontFamily: 'Tajawal',
 
   },
   countryResultStyle: {
     fontSize: scaleWidth(50),
-    color: "white",
+    color: "#F6B164",
     fontWeight: "bold",
     fontFamily: 'Tajawal',
 

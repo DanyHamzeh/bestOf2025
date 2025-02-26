@@ -13,8 +13,9 @@ export default function CustomButton({ children, onPress, disabled ,width }) {
                 width: width,
                 height: scaleHeight(130),
                 borderWidth:2,
-                borderColor:"#C2E0D4",
+                borderColor:"#F6B164",
                 borderRadius:30,
+                // backgroundColor:"#F29057"
 
                 
 
@@ -35,8 +36,8 @@ export default function CustomButton({ children, onPress, disabled ,width }) {
             <Pressable disabled={disabled}>
                 <Text style={[styles.buttonText,
                 {
-                    fontSize: scaleWidth(40),
-                    color: "white",
+                    fontSize: scaleWidth(50),
+                    color: "#F6B164",
                     fontFamily: "Tajawal",
 
                 },
@@ -46,6 +47,7 @@ export default function CustomButton({ children, onPress, disabled ,width }) {
                 </Text>
             </Pressable>
         </View>
+
     );
 }
 

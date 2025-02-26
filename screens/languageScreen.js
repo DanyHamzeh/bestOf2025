@@ -15,9 +15,11 @@ function LanguageScreen({ navigation }) {
     }
 
     return (
-        <ImageBackground
-            source={require("../assets/testtt.jpg")}
+        <LinearGradient
+            colors={["#021F59", "#16CAF2"]}
             style={styles.container}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
         >
             <Image
                 source={require("../assets/GlobeImage.png")}
@@ -25,7 +27,7 @@ function LanguageScreen({ navigation }) {
             />
             <View style={styles.allBtns}>
                 <LinearGradient
-                    colors={['#80B3B7', '#316362']}
+                    colors={["#16CAF2", "#021F59"]} 
                     style={[styles.innerCircle, styles.gradientButton]}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
@@ -37,7 +39,7 @@ function LanguageScreen({ navigation }) {
 
                 <Pressable onPress={navigateArabic}>
                     <LinearGradient
-                        colors={['#80B3B7', '#316362']}
+                        colors={["#16CAF2", "#021F59"]} 
                         style={[styles.innerCircle, styles.gradientButton]}
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 1 }}
@@ -49,7 +51,7 @@ function LanguageScreen({ navigation }) {
                     </LinearGradient>
                 </Pressable>
             </View>
-        </ImageBackground>
+        </LinearGradient>
     )
 };
 
