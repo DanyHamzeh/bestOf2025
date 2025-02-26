@@ -112,7 +112,6 @@ function EnglishScreen({ navigation }) {
         })
             .then((response) => response.json())
             .then(async (data) => {
-                console.log("API Response Data:", data);
 
                 if (data.statusCode == "0") {
                     await AsyncStorage.setItem('hasVoted', 'true');
@@ -130,10 +129,12 @@ function EnglishScreen({ navigation }) {
                         Alert.alert("Unable To Vote!!", "Estimated remaining time to vote: " + data.remainingTime, [
                             { text: "Ok", style: "cancel" },
                         ]);
+
                     } else if (data.statusCode == "-5") {
                         Alert.alert("Unable To Vote!!", "You already voted", [
                             { text: "Ok", style: "cancel" },
                         ]);
+
                     } else {
                         Alert.alert("", "Something went wrong. Please try again later.", [
                             { text: "Try Again", style: "cancel" },
@@ -145,6 +146,8 @@ function EnglishScreen({ navigation }) {
                 setLoading(false);
                 console.error("Fetch Error:", error);
                 alert("Connection error. Please try again later.");
+                console.log(apiUrl);
+
             });
     };
 

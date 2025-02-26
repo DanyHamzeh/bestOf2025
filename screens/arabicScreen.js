@@ -33,7 +33,7 @@ const ArabicScreen = ({ navigation }) => {
     const widthBar = scaleWidth(1000);
     const heightBar = scaleHeight(800);
     const EnglishApiTopThree = "EN";
-    const ArabicApi= "EN";
+    const ArabicApi= "AR";
 
     // Navigate to the result screen
     function navigateResult() {
