@@ -57,10 +57,9 @@ const Splashscreen = ({ onAnimationEnd }) => {
             end={{ x: 1, y: 1 }}
         >
             <Animated.Image
-                source={require("../assets/backtest.png")}
+                source={require("../assets/GlobeImage.png")}
                 style={[styles.whiteElement, whiteElementStyle]}
             />
-            <AnimatedText text="BEST OF 2025" />
 
         </LinearGradient>
     );
@@ -73,8 +72,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        position: "relative",
-        width: "100%",
     },
     element: {
         position: "absolute",

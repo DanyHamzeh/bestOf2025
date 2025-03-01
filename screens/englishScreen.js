@@ -226,8 +226,8 @@ function EnglishScreen({ navigation }) {
                         showBarTops={true}
                         chartConfig={{
                             backgroundColor: "transparent",
-                            backgroundGradientFrom: "#16CAF2",
-                            backgroundGradientTo: "#021F59",
+                            backgroundGradientFrom: "#021F59",
+                            backgroundGradientTo: "#16CAF2",
                             decimalPlaces: "",
                             color: (opacity = 4) => `rgba(255, 255, 255, ${opacity})`,
                             labelColor: () => `#F6B164`,
@@ -246,7 +246,7 @@ function EnglishScreen({ navigation }) {
                     />
                     <View style={styles.firstBtn}>
                         <LinearGradient
-                            colors={["#16CAF2", "#021F59"]}
+                            colors={["#054a81","#054a81"]}
                             style={[styles.innerCircle, styles.gradientButton]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
@@ -269,7 +269,7 @@ function EnglishScreen({ navigation }) {
                     {showCont && (
                         <View style={styles.allBtns}>
                             <LinearGradient
-                                colors={["#16CAF2", "#021F59"]}
+                                colors={["#054a81","#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -320,7 +320,7 @@ function EnglishScreen({ navigation }) {
                             )}
 
                             <LinearGradient
-                                colors={["#16CAF2", "#021F59"]}
+                                colors={["#054a81","#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}

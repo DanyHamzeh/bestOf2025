@@ -10,7 +10,6 @@ import * as Application from "expo-application";
 import { scaleHeight, scaleWidth } from "../utils/sizeUtils"
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
 // Function to shape Arabic text (connect letters correctly)
 const shapeArabicText = (text) => {
     const arabicLetters = {
@@ -19,7 +18,10 @@ const shapeArabicText = (text) => {
         "ق": "ق", "ك": "ك", "ل": "ل", "م": "م", "ن": "ن", "ه": "ه", "و": "و", "ي": "ي"
     };
 
-    return text.split('').map((char) => arabicLetters[char] || char).join('');
+
+     return text.split('').map((char) => arabicLetters[char] || char).join('');
+    
+
 };
 
 const ArabicScreen = ({ navigation }) => {
@@ -32,8 +34,8 @@ const ArabicScreen = ({ navigation }) => {
     const [showCont, setShowCont] = useState(true);
     const widthBar = scaleWidth(1000);
     const heightBar = scaleHeight(800);
-    const EnglishApiTopThree = "EN";
     const ArabicApi = "AR";
+
 
     // Navigate to the result screen
     function navigateResult() {
@@ -101,7 +103,7 @@ const ArabicScreen = ({ navigation }) => {
 
     const votesNewInfo = () => {
         setLoading(true);
-        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/getVotes.php?language=${EnglishApiTopThree}&isTopThree=Y`;
+        const apiUrl = `https://www.thinksmart.live/Country%20Voting/php/getVotes.php?language=${ArabicApi}&isTopThree=Y`;
         fetch(apiUrl, {
             method: "POST",
             headers: {
@@ -111,8 +113,8 @@ const ArabicScreen = ({ navigation }) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                if (data?.data?.dataArr) {
-                    const formattedData = data.data.dataArr.map((item) => ({
+                if (data?.data?.dataArr) {                    
+                        const formattedData = data.data.dataArr.map((item) => ({
                         country: item.country,
                         votingNumber: parseInt(item.votes),
                     }));
@@ -218,7 +220,7 @@ const ArabicScreen = ({ navigation }) => {
                 setLoading(false);
             })
             .catch(() => {
-                alert("Connection error. Please try again later.");
+                alert("خطأ في الاتصال. يرجى المحاولة مرة أخرى لاحقًا.");
                 setLoading(false);
             });
     }, []);
@@ -293,7 +295,7 @@ const ArabicScreen = ({ navigation }) => {
                     />
                     <View style={styles.firstBtn}>
                         <LinearGradient
-                            colors={['#80B3B7', '#316362']}
+                            colors={["#054a81","#054a81"]}
                             style={[styles.innerCircle, styles.gradientButton]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
@@ -313,7 +315,7 @@ const ArabicScreen = ({ navigation }) => {
                     {showCont ?
                         <View style={styles.allBtns}>
                             <LinearGradient
-                                colors={['#80B3B7', '#316362']}
+                                colors={["#054a81","#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -364,7 +366,7 @@ const ArabicScreen = ({ navigation }) => {
                             )}
 
                             <LinearGradient
-                                colors={['#80B3B7', '#316362']}
+                                colors={["#054a81","#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}

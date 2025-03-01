@@ -82,7 +82,7 @@ function ResultsScreen({ route }) {
               {data.map((item, index) => (
                 <LinearGradient
                   key={index}
-                  colors={["#16CAF2", "#021F59"]}
+                  colors={["#054a81","#054a81"]}
                   style={[styles.innerCircle, styles.gradientButton]}
                   start={{ x: 0, y: 0 }}
                   end={{ x: 1, y: 1 }}

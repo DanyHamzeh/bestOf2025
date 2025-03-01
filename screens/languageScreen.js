@@ -27,7 +27,7 @@ function LanguageScreen({ navigation }) {
         />
         <View style={styles.allBtns}>
             <LinearGradient
-                colors={["#16CAF2", "#021F59"]} 
+                colors={["#054a81","#054a81"]} 
                 style={[styles.innerCircle, styles.gradientButton]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
@@ -39,7 +39,7 @@ function LanguageScreen({ navigation }) {
 
             <Pressable onPress={navigateArabic}>
                 <LinearGradient
-                    colors={["#16CAF2", "#021F59"]} 
+                    colors={["#054a81","#054a81"]} 
                     style={[styles.innerCircle, styles.gradientButton]}
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 1 }}
