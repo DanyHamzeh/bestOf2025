@@ -19,8 +19,8 @@ const shapeArabicText = (text) => {
     };
 
 
-     return text.split('').map((char) => arabicLetters[char] || char).join('');
-    
+    return text.split('').map((char) => arabicLetters[char] || char).join('');
+
 
 };
 
@@ -113,8 +113,8 @@ const ArabicScreen = ({ navigation }) => {
         })
             .then((response) => response.json())
             .then((data) => {
-                if (data?.data?.dataArr) {                    
-                        const formattedData = data.data.dataArr.map((item) => ({
+                if (data?.data?.dataArr) {
+                    const formattedData = data.data.dataArr.map((item) => ({
                         country: item.country,
                         votingNumber: parseInt(item.votes),
                     }));
@@ -279,11 +279,11 @@ const ArabicScreen = ({ navigation }) => {
                             color: (opacity = 4) => `rgba(255, 255, 255, ${opacity})`,
                             labelColor: () => `#F6B164`,
                             propsForLabels: {
-                                fontFamily: 'Tajawal', 
+                                fontFamily: 'Tajawal',
                                 fontSize: scaleWidth(30),
                                 fontWeight: 'normal',
-                                textAlign: 'right', 
-                                writingDirection: 'rtl', 
+                                textAlign: 'right',
+                                writingDirection: 'rtl',
                             },
                         }}
                         style={{
@@ -295,7 +295,7 @@ const ArabicScreen = ({ navigation }) => {
                     />
                     <View style={styles.firstBtn}>
                         <LinearGradient
-                            colors={["#054a81","#054a81"]}
+                            colors={["#054a81", "#054a81"]}
                             style={[styles.innerCircle, styles.gradientButton]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
@@ -315,7 +315,7 @@ const ArabicScreen = ({ navigation }) => {
                     {showCont ?
                         <View style={styles.allBtns}>
                             <LinearGradient
-                                colors={["#054a81","#054a81"]}
+                                colors={["#054a81", "#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -366,7 +366,7 @@ const ArabicScreen = ({ navigation }) => {
                             )}
 
                             <LinearGradient
-                                colors={["#054a81","#054a81"]}
+                                colors={["#054a81", "#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
