@@ -235,6 +235,7 @@ const ArabicScreen = ({ navigation }) => {
         ],
     };
 
+    console.log("Chart Data:", chartData);
 
     return (
         <LinearGradient
@@ -263,7 +264,11 @@ const ArabicScreen = ({ navigation }) => {
                     </Text>
                     <View style={styles.underLineStyle} />
                     <BarChart
-                        data={chartData}
+                        // data={chartData}
+                        data={{
+                            labels: ['يناير', 'فبراير', 'مارس'],
+                            datasets: [{ data: [20, 45, 28] }]
+                        }}
                         width={widthBar}
                         height={heightBar}
                         yAxisLabel=""

@@ -20,14 +20,15 @@ import { enableScreens } from 'react-native-screens';
 export default function App() {
   const Stack = createStackNavigator();
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  
+
 
   // SplashScreen.preventAutoHideAsync();
   // setTimeout(SplashScreen.hideAsync, 5000);
 
   const [loaded] = useFonts({
     "gotham-bold": require("./assets/Fonts/gothambold/gotham-bold-webfont.ttf"),
-    'Tajawal':require("./assets/Fonts/Tajawal-ExtraBold.ttf")
+    'Tajawal': require("./assets/Fonts/Tajawal-ExtraBold.ttf"),
+    "Cairo": require("./assets/Fonts/Cairo-VariableFont_slnt,wght.ttf")
   });
 
 

@@ -246,7 +246,7 @@ function EnglishScreen({ navigation }) {
                     />
                     <View style={styles.firstBtn}>
                         <LinearGradient
-                            colors={["#054a81","#054a81"]}
+                            colors={["#054a81", "#054a81"]}
                             style={[styles.innerCircle, styles.gradientButton]}
                             start={{ x: 0, y: 0 }}
                             end={{ x: 1, y: 1 }}
@@ -269,7 +269,7 @@ function EnglishScreen({ navigation }) {
                     {showCont && (
                         <View style={styles.allBtns}>
                             <LinearGradient
-                                colors={["#054a81","#054a81"]}
+                                colors={["#054a81", "#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
@@ -320,7 +320,7 @@ function EnglishScreen({ navigation }) {
                             )}
 
                             <LinearGradient
-                                colors={["#054a81","#054a81"]}
+                                colors={["#054a81", "#054a81"]}
                                 style={[styles.innerCircle, styles.gradientButton]}
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
